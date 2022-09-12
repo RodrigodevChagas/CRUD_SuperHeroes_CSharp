@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Cadastro_Herois>
+@{
     ViewData["Title"] = "Cadastros";
 }
 
@@ -19,18 +20,24 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Bruce Wayne</td>
-                <td>Batman</td>
-                <td>Gotham City</td>
-                <td>DC</td>
-                <td>
-                    <a role="button" class="btn btn-primary" asp-controller="Cadastro" asp-action="Editar">Editar</a>
-                    <a role="button" class="btn btn-danger" asp-controller="Cadastro" asp-action="Apagar">Apagar</a>
-                </td>
-            </tr>
-            <tr>
+                @if (Model != null && Model.Any()) 
+                {
+                    foreach (Cadastro_Herois herois in Model) 
+                    {
+                        <tr>
+                            <th scope="row">@herois.Id</th>
+                            <td>@herois.Nome</td>
+                            <td>@herois.Nome_De_Heroi</td>
+                            <td>@herois.Local_de_Origem</td>
+                            <td>@herois.Empresa</td>
+                            <td>
+                                <a role="button" class="btn btn-primary" asp-controller="Cadastro" asp-action="Editar" asp-route-id="@herois.Id">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-controller="Cadastro" asp-action="Apagar" asp-route-id="@herois.Id">Apagar</a>
+                            </td>
+                        </tr>
+                    }
+                }
+ @*           <tr>
                 <th scope="row">2</th>
                 <td>Barry Allen</td>
                 <td>The Flash</td>
@@ -51,7 +58,7 @@
                     <a role="button" class="btn btn-primary" asp-controller="Cadastro" asp-action="Editar">Editar</a>
                     <a role="button" class="btn btn-danger" asp-controller="Cadastro" asp-action="Apagar">Apagar</a>
                 </td>
-            </tr>
+            </tr>*@
         </tbody>
     </table>
 </div>

@@ -15,7 +15,8 @@ namespace CRUD_Escolinha.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var herois = _heroisRepositorio.BuscarTodos();
+            return View(herois);
         }
         public IActionResult Criar()
         {
@@ -30,11 +31,6 @@ namespace CRUD_Escolinha.Controllers
             return View();
         }
         
-        //[HttpGet]
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
         [HttpPost]
         public IActionResult Criar(Cadastro_Herois herois)
         {
