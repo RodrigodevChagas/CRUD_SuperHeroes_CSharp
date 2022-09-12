@@ -1,0 +1,28 @@
+﻿@model Cadastro_Herois
+@*
+*@
+@{
+    ViewData["Title"] = "Adicionar Herois";
+}
+<form asp-controller="Cadastro" asp-action="Criar" method="post">
+    <div class="mb-3">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" id="Nome">
+    </div>
+    <div class="mb-3">
+        <label for="NomeHeroi" class="form-label">Nome de Heroi</label>
+        <input type="text" asp-for="Nome_De_Heroi" class="form-control" id="NomeHeroi">
+    </div>
+    <div class="mb-3">
+        <label for="LocalOrigem" class="form-label">Local de Origem</label>
+        <input type="text" asp-for="Local_de_Origem" class="form-control" id="LocalOrigem">
+    </div>
+    <div class="mb-3">
+        <label for="Empresa" class="form-label">Empresa</label>
+        <input type="text" asp-for="Empresa" class="form-control" id="Empresa">
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-block">Confirmar</button>
+        <a role="button" class="btn btn-secondary btn-block" asp-controller="Cadastro" asp-action="Index">Voltar</a>
+    </div>
+</form>

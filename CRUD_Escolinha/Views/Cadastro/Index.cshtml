@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Cadastros";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastro Herois</h1>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a role="button" class="btn btn-primary" asp-controller="Cadastro" asp-action="Criar">Adicionar novo Héroi</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Nome de Heroi</th>
+                <th scope="col">Local de Origem</th>                
+                <th scope="col">Empresa</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Bruce Wayne</td>
+                <td>Batman</td>
+                <td>Gotham City</td>
+                <td>DC</td>
+                <td>
+                    <a role="button" class="btn btn-primary" asp-controller="Cadastro" asp-action="Editar">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-controller="Cadastro" asp-action="Apagar">Apagar</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Barry Allen</td>
+                <td>The Flash</td>
+                <td>Central City</td>
+                <td>DC</td>
+                <td>
+                    <a role="button" class="btn btn-primary" asp-controller="Cadastro" asp-action="Editar">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-controller="Cadastro" asp-action="Apagar">Apagar</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Kal-El</td>
+                <td>SuperMan</td>
+                <td>Kripton</td>
+                <td>DC</td>
+                <td>
+                    <a role="button" class="btn btn-primary" asp-controller="Cadastro" asp-action="Editar">Editar</a>
+                    <a role="button" class="btn btn-danger" asp-controller="Cadastro" asp-action="Apagar">Apagar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

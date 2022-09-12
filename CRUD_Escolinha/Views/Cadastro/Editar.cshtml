@@ -1,0 +1,23 @@
+﻿@*
+    ViewData["Title"] = "Alterar Herois";
+*@
+@{
+}
+<form>
+    <div class="mb-3">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="Nome">
+    </div>
+    <div class="mb-3">
+        <label for="NomeHeroi" class="form-label">Nome de Heroi</label>
+        <input type="text" class="form-control" id="NomeHeroi">
+    </div>
+    <div class="mb-3">
+        <label for="LocalOrigem" class="form-label">Local de Origem</label>
+        <input type="text" class="form-control" id="LocalOrigem">
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+        <a role="button" class="btn btn-secondary btn-block" asp-controller="Cadastro" asp-action="Index">Voltar</a>
+    </div>
+</form>
