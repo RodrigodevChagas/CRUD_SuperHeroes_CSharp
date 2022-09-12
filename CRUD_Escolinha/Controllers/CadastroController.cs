@@ -22,13 +22,15 @@ namespace CRUD_Escolinha.Controllers
         {
             return View();
         }
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            var heroi = _heroisRepositorio.ListarPorId(id);
+            return View(heroi);
         }
-        public IActionResult Apagar()
+        public IActionResult Apagar(int id)
         {
-            return View();
+            _heroisRepositorio.Apagar(id);
+            return RedirectToAction("Index");
         }
         
         [HttpPost]
@@ -37,15 +39,15 @@ namespace CRUD_Escolinha.Controllers
             _heroisRepositorio.Adicionar(herois);
             return RedirectToAction("Index");
         }
-        //[HttpPut]
-        //public IActionResult Editar()
-        //{
-        //    return View();
-        //}
-        //[HttpDelete]
-        //public IActionResult Apagar()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult Editar(Cadastro_Herois heroi)
+        {
+            _heroisRepositorio.Editar(heroi);
+            return RedirectToAction("Index");
+        }
+        public IActionResult ApagarConfirmacao()
+        {
+            return View();
+        }
     }
 }
